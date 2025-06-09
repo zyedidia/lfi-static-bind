@@ -6,10 +6,12 @@ cd build
 ninja
 ```
 
-Build `sandbox/stub.elf` and `sandbox/host.so`:
+Build `sandbox/stub.elf` and `sandbox/host.so` (requires `mold`):
 
 ```
-make -C sandbox
+$ make -C sandbox
+clang -shared -fPIC host.c -O2 -o host.so -fuse-ld=mold -Wl,--spare-program-headers=7
+x86_64-lfi-linux-musl-clang add.c stub.c -O2 -o stub.elf -static-pie
 ```
 
 Dump info for stub and host:
