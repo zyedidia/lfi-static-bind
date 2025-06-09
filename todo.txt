@@ -1,0 +1,5 @@
+* read stub.elf
+* generate lib.c
+* compile lib.c to host.so
+* lfi-static-bind stub.elf host.so -o lib.so
+* edit symbols in lib.so

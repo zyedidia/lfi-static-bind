@@ -1,0 +1,6 @@
+subprojects/libelf
+subprojects/argtable3
+.cache
+*.so
+*.elf
+*.a
